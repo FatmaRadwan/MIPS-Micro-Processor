@@ -1,0 +1,53 @@
+Set $R1,0
+SSet $R1,0
+SSet $R1,3
+SSet $R1,E8
+////first element in the array =1000//////
+Set $R2,0
+SSet $R2,0
+SSEt $R2,3
+SSet $R2,20
+/////second element = 800///////
+Set $R3,0
+SSEt $R3,0
+SSEt $R3,0
+SSet $R3,c8
+//////Third element =200///////
+Set $R4,0
+SSEt $R4,0
+SSEt $R4,0
+SSet $R4,3
+/////number of elements/////
+Set $R5,0
+SSEt $R5,0
+SSEt $R5,0
+SSet $R5,0
+//////size test//////
+Set $R7,0
+SSEt $R7,0
+SSEt $R7,0
+SSet $R7,0
+/////output//////
+Set $R6,0
+SSEt $R6,0
+SSEt $R6,0
+SSet $R6,0
+//////load/////
+Set $R0,0
+SSEt $R0,0
+SSEt $R0,0
+SSet $R0,1
+/////base address////
+sw $R1,0($R0)
+sw $R2,1($R0)
+sw $R3,2($R0)
+Lable:
+beq $R4,$R5,End
+lw $R6,0($R0)
+add $R7,$R7,$R6
+addi $R5,$R5,1
+addi $R0,$R0,1
+j Lable
+
+
+End
